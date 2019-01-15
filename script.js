@@ -1,10 +1,10 @@
 //created an array called quotes with elements quote and source
-var Quotes = [
-  {quote: 'There is nothing permanent except change.', Source: 'Heraclitus'},
-  {quote: 'Learning never exhausts the mind.', Source:'Leonardo da Vinci'},
-  {quote: 'There is no charm equal to tenderness of heart.', Source:'Jane Austen' },
-  {quote: 'All that we see or seem is but a dream within a dream.', Source: 'Edgar Allen Poe' },
-  {quote: 'You cannot shake hands with a clenched fist.',  Source: 'Indira Gandhi' },
+var quotes = [
+  {quote: 'There is nothing permanent except change.', source: 'Heraclitus'},
+  {quote: 'Learning never exhausts the mind.', source:'Leonardo da Vinci'},
+  {quote: 'There is no charm equal to tenderness of heart.', source:'Jane Austen' },
+  {quote: 'All that we see or seem is but a dream within a dream.', source: 'Edgar Allen Poe' },
+  {quote: 'You cannot shake hands with a clenched fist.',  source: 'Indira Gandhi' },
 ];
 
 /**
@@ -14,28 +14,28 @@ returned the random quote
 **/
 
 function getRandomQuote(array) {
-  var QuoteChoose = Math.floor(Math.random() * (Quotes.length));
-    for (var I = 0, I < array.length; I++) {
-      var RandomQuote = array[QuoteChoose];
+  var quoteChoose = Math.floor(Math.random() * (quotes.length));
+    for (var I = 0; I < array.length; I++) {
+      var randomQuote = array[quoteChoose];
     }
-    return RandomQuote;
+    return randomQuote;
 }
 
-/** created a print quote function than beings w/ and empty variable Message
-then begins to fill the message to load to the page *//
+/** created a print quote function than beings with and empty variable Message
+then begins to fill the message to load to the page **/
 
-function PrintQuote () {
-  var Message = " ";
-  var QuoteShow = getRandomQuote(Quotes);
-  Message = "<p class='quote'>" + QuoteShow.Quote + "</p>";
-  Message += "<p class='source'>" + QuoteShow.Source;
+function printQuote () {
+  var message = " ";
+  var quoteShow = getRandomQuote(quotes);
+  message += "<p class='quote'>" + quoteShow.quote + "</p>";
+  message += "<p class='source'>" + quoteShow.source;
 
-document.getElementById('quote-box').innerHTML = Message;
+document.getElementById('quote-box').innerHTML = message;
 }
 
-PrintQuote();
+printQuote();
 /***
 Dev done by treehouse to give display button to page to allow to
 change quote on clicking
 ***/
-document.getElementById('loadQuote').addEventListener("click", PrintQuote, false);
+document.getElementById('loadQuote').addEventListener("click", printQuote, false);
