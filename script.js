@@ -15,7 +15,7 @@ returned the random quote
 
 function getRandomQuote(array) {
   var quoteChoose = Math.floor(Math.random() * (quotes.length));
-    for (var I = 0; I < array.length; I++) {
+    for (var i = 0; i < array.length; i++) {
       var randomQuote = array[quoteChoose];
     }
     return randomQuote;
@@ -29,7 +29,13 @@ function printQuote () {
   var quoteShow = getRandomQuote(quotes);
   message += "<p class='quote'>" + quoteShow.quote + "</p>";
   message += "<p class='source'>" + quoteShow.source;
-
+    if (quoteShow.citation !== "") {
+    message += '<span class="citation">' + quoteShow.citation + '</span>';
+    }
+    if (quoteShow.year !== "") {
+     message += '<span class ="year">' + quoteShow.year + '</span';
+    }
+  message += '</p>';
 document.getElementById('quote-box').innerHTML = message;
 }
 
